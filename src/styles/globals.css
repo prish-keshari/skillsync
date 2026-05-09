@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas;
+}
+
+/* Precision Engineering / Technical Aesthetic */
+body {
+  background-color: #0a0a0a;
+  color: #ededed;
+  font-family: var(--font-sans);
+}
+
+/* Mechanical drafting background */
+.draft-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: center top;
+}
+
+/* Hard borders, no soft radii */
+.panel {
+  background-color: #111111;
+  border: 1px solid #27272a;
+}
+
+.panel-hover:hover {
+  background-color: #18181b;
+  border-color: #52525b;
+}
+
+/* Sharp mono accents */
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Raw accent color - Electric Cyan / White */
+.accent-border {
+  border-left: 2px solid #fff;
+}
+
+/* Mechanical animations (snappy, linear) */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, opacity;
+  transition-duration: 100ms;
+  transition-timing-function: linear;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+  border-left: 1px solid #27272a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #71717a;
+}
+
+/* Status indicator dot */
+@keyframes strict-blink {
+
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.status-dot {
+  animation: strict-blink 1s infinite;
+}
+
+/* Code blocks */
+code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
